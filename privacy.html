@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="ProofFix Privacy Policy - Learn how we protect your data and respect your privacy.">
+    <title>Privacy Policy - ProofFix</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="grid-bg"></div>
+    <div class="glow glow-top-left"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">ProofFix</span>
+            </a>
+
+            <nav class="nav" id="nav">
+                <a href="docs.html" class="nav-link">Docs</a>
+                <a href="index.html#features" class="nav-link">Features</a>
+                <a href="index.html#cli" class="nav-link">CLI</a>
+                <a href="feedback.html" class="nav-link">Feedback</a>
+            </nav>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <p class="section-label">// legal</p>
+            <h1 class="section-title">Privacy <span class="text-orange">Policy</span></h1>
+            <p class="section-desc">Last updated: January 2026</p>
+        </div>
+    </section>
+
+    <!-- Privacy Content -->
+    <main class="page-content">
+        <div class="container">
+
+            <section class="content-section">
+                <h2>Our Commitment to Privacy</h2>
+                <p>ProofFix is built on the principle of <strong>local-first computing</strong>. We believe your code is
+                    your business, and it should stay that way. This privacy policy explains our approach to data and
+                    why we're different from cloud-based tools.</p>
+            </section>
+
+            <section class="content-section">
+                <h2>The Short Version</h2>
+                <ul>
+                    <li><strong>Your code never leaves your machine.</strong> All processing happens locally.</li>
+                    <li><strong>No telemetry by default.</strong> We don't track your usage unless you opt in.</li>
+                    <li><strong>No cloud uploads.</strong> ProofFix doesn't send code to any server.</li>
+                    <li><strong>No accounts required.</strong> Use ProofFix without signing up for anything.</li>
+                    <li><strong>Open source.</strong> Audit the code yourself if you want to verify our claims.</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>What Data We Collect</h2>
+
+                <h3>When Using the CLI (Default)</h3>
+                <p><strong>None.</strong> The ProofFix CLI runs entirely on your machine. We have no visibility into
+                    what you scan, what issues you find, or what fixes you apply.</p>
+
+                <h3>When You Opt Into Analytics</h3>
+                <p>If you choose to enable anonymous usage analytics (disabled by default), we may collect:</p>
+                <ul>
+                    <li>ProofFix version number</li>
+                    <li>Operating system type (macOS, Linux, Windows)</li>
+                    <li>Command used (e.g., "scan", "rollback")</li>
+                    <li>Anonymous session ID</li>
+                </ul>
+                <p>We <strong>never</strong> collect:</p>
+                <ul>
+                    <li>Your source code</li>
+                    <li>File names or paths</li>
+                    <li>Error messages or code snippets</li>
+                    <li>Personal information</li>
+                </ul>
+
+                <h3>When Using This Website</h3>
+                <p>This website does not use cookies or tracking scripts. If you submit the feedback form, we store your
+                    name, email, and message to respond to your inquiry.</p>
+            </section>
+
+            <section class="content-section">
+                <h2>How We Protect Your Data</h2>
+                <ul>
+                    <li><strong>Local processing:</strong> All code analysis happens on your machine.</li>
+                    <li><strong>No cloud dependencies:</strong> ProofFix works fully offline.</li>
+                    <li><strong>Git snapshots:</strong> Changes are tracked locally using Git.</li>
+                    <li><strong>Minimal data:</strong> We don't collect what we don't need.</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>Third-Party Services</h2>
+                <p>ProofFix itself doesn't integrate with third-party analytics or tracking services. The website uses:
+                </p>
+                <ul>
+                    <li><strong>Google Fonts:</strong> For typography (Inter, JetBrains Mono)</li>
+                    <li><strong>Formspree:</strong> For feedback form submissions (optional)</li>
+                </ul>
+                <p>Both services have their own privacy policies. Formspree submissions are only used to respond to your
+                    feedback.</p>
+            </section>
+
+            <section class="content-section">
+                <h2>Data Retention</h2>
+                <ul>
+                    <li><strong>CLI usage:</strong> No data retained (nothing collected).</li>
+                    <li><strong>Feedback submissions:</strong> Retained until your inquiry is resolved, then deleted
+                        within 90 days.</li>
+                    <li><strong>Analytics (if opted in):</strong> Aggregated and anonymized; raw data deleted after 30
+                        days.</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>Your Rights</h2>
+                <p>You have the right to:</p>
+                <ul>
+                    <li><strong>Access:</strong> Request a copy of any data we hold about you.</li>
+                    <li><strong>Deletion:</strong> Request deletion of your data.</li>
+                    <li><strong>Correction:</strong> Request correction of inaccurate data.</li>
+                    <li><strong>Opt out:</strong> Disable analytics at any time with
+                        <code>prooffix config set analytics false</code>.</li>
+                </ul>
+                <p>To exercise these rights, contact us at <a href="mailto:privacy@prooffix.dev"
+                        style="color: var(--accent);">privacy@prooffix.dev</a>.</p>
+            </section>
+
+            <section class="content-section" id="terms">
+                <h2>Terms of Use</h2>
+                <p>ProofFix is provided "as is" under the MIT License. By using ProofFix, you agree to:</p>
+                <ul>
+                    <li>Use the tool responsibly and in compliance with applicable laws.</li>
+                    <li>Not hold ProofFix liable for any damages resulting from use of the software.</li>
+                    <li>Review changes before committing to production systems.</li>
+                </ul>
+                <p>The full MIT License is available in our <a
+                        href="https://github.com/prooffix/prooffix/blob/main/LICENSE" target="_blank"
+                        style="color: var(--accent);">GitHub repository</a>.</p>
+            </section>
+
+            <section class="content-section">
+                <h2>Changes to This Policy</h2>
+                <p>We may update this privacy policy from time to time. Significant changes will be announced in our
+                    GitHub releases. The "last updated" date at the top of this page indicates when it was last revised.
+                </p>
+            </section>
+
+            <section class="content-section">
+                <h2>Contact Us</h2>
+                <p>Questions about this privacy policy? Contact us:</p>
+                <ul>
+                    <li>Email: <a href="mailto:privacy@prooffix.dev"
+                            style="color: var(--accent);">privacy@prooffix.dev</a></li>
+                    <li>GitHub: <a href="https://github.com/prooffix/prooffix/issues" target="_blank"
+                            style="color: var(--accent);">Open an issue</a></li>
+                    <li>Feedback form: <a href="feedback.html" style="color: var(--accent);">Send us a message</a></li>
+                </ul>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <span class="logo-icon">⚡</span>
+                        <span class="logo-text">ProofFix</span>
+                    </a>
+                    <p class="footer-tagline">Safe code evolution for developers who ship fast but don't break things.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#cli">CLI Commands</a></li>
+                        <li><a href="docs.html">Documentation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="docs.html#quickstart">Getting Started</a></li>
+                        <li><a href="docs.html#faq">FAQ</a></li>
+                        <li><a href="https://github.com/prooffix/prooffix" target="_blank">GitHub</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html" style="color: var(--accent);">Privacy Policy</a></li>
+                        <li><a href="privacy.html#terms">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Made with <span class="heart">🧡</span> for developers who care about code quality</p>
+                <p class="footer-copyright">© 2026 ProofFix. Open source under MIT license.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

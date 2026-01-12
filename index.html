@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="ProofFix - A verifiable, local-first CLI tool for safe code evolution. AI assists, tools verify, you decide.">
+  <title>ProofFix - Safe Code Evolution. Zero Guesswork.</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Grid Background -->
+  <div class="grid-bg"></div>
+
+  <!-- Glow Effects -->
+  <div class="glow glow-top-left"></div>
+  <div class="glow glow-bottom-right"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">ProofFix</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="docs.html" class="nav-link">Docs</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#cli" class="nav-link">CLI</a>
+        <a href="feedback.html" class="nav-link">Feedback</a>
+        <a href="https://github.com/prooffix/prooffix" target="_blank" rel="noopener" class="nav-link nav-link-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path
+              d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+          </svg>
+        </a>
+      </nav>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-label">// local-first CLI tool</p>
+        <h1 class="hero-title">
+          Safe Code Evolution.<br>
+          <span class="text-orange">Zero Guesswork.</span>
+        </h1>
+        <p class="hero-subtitle">
+          AI assists. <span class="text-orange">Tools verify.</span> You decide.<br>
+          Every change is verifiable and reversible.
+        </p>
+
+        <!-- Animated Terminal -->
+        <div class="terminal">
+          <div class="terminal-header">
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-title">prooffix</span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span class="terminal-command" id="typed-command"></span>
+              <span class="terminal-cursor">▌</span>
+            </div>
+            <div class="terminal-output" id="terminal-output"></div>
+          </div>
+        </div>
+
+        <div class="hero-cta">
+          <a href="docs.html" class="btn btn-primary">
+            Get Started
+            <span class="btn-arrow">→</span>
+          </a>
+          <a href="https://github.com/prooffix/prooffix" target="_blank" rel="noopener" class="btn btn-secondary">
+            View on GitHub
+          </a>
+        </div>
+
+        <p class="hero-note">
+          <span class="code-badge">npm install -g prooffix</span>
+          <span class="separator">|</span>
+          <span class="text-muted">Works on macOS, Linux, Windows</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section id="problem" class="problem section">
+    <div class="container">
+      <p class="section-label">// the problem</p>
+      <h2 class="section-title">
+        Code changes were hard before.<br>
+        <span class="text-orange">Now, they feel impossible.</span>
+      </h2>
+      <p class="section-desc">
+        Your team moves fast with AI. But fast shouldn't mean risky.
+        AI-generated code lacks verification. Manual reviews can't keep up.
+        ProofFix makes sure every line earns its merge.
+      </p>
+
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-icon">❌</div>
+          <h3>Unverified AI Output</h3>
+          <p>AI generates code, but who checks if it's actually correct?</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">⏰</div>
+          <h3>Review Bottlenecks</h3>
+          <p>PRs pile up. Security slips through. Technical debt grows.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">🔒</div>
+          <h3>Privacy Concerns</h3>
+          <p>Cloud tools see your code. Sensitive logic leaves your machine.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-number">6+</span>
+          <span class="stat-label">Languages Supported</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Built-in Rules</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Local Processing</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Cloud Dependencies</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features section">
+    <div class="container">
+      <p class="section-label">// features</p>
+      <h2 class="section-title">Everything you need for <span class="text-orange">safe evolution</span></h2>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-header">
+            <span class="feature-icon">🔍</span>
+            <span class="feature-badge">core</span>
+          </div>
+          <h3 class="feature-title">Multi-Language Support</h3>
+          <p class="feature-desc">TypeScript, JavaScript, Python, Go, Rust, and more. Unified analysis across your
+            entire codebase.</p>
+          <div class="feature-tags">
+            <span class="tag">TS</span>
+            <span class="tag">Python</span>
+            <span class="tag">Go</span>
+            <span class="tag">Rust</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-header">
+            <span class="feature-icon">🛡️</span>
+            <span class="feature-badge feature-badge-orange">security</span>
+          </div>
+          <h3 class="feature-title">Security Hardening</h3>
+          <p class="feature-desc">OWASP-compliant checks built-in. Catch vulnerabilities before they reach production.
+          </p>
+          <div class="feature-tags">
+            <span class="tag tag-orange">OWASP</span>
+            <span class="tag tag-orange">CWE</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-header">
+            <span class="feature-icon">⏪</span>
+            <span class="feature-badge">safety</span>
+          </div>
+          <h3 class="feature-title">Instant Rollback</h3>
+          <p class="feature-desc">Git-based snapshots before every change. One command to undo. Zero anxiety.</p>
+          <div class="feature-tags">
+            <span class="tag">Git</span>
+            <span class="tag">Snapshots</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-header">
+            <span class="feature-icon">📊</span>
+            <span class="feature-badge">devops</span>
+          </div>
+          <h3 class="feature-title">CI Integration</h3>
+          <p class="feature-desc">SARIF reports, exit codes, and machine-parseable output for your pipelines.</p>
+          <div class="feature-tags">
+            <span class="tag">SARIF</span>
+            <span class="tag">GitHub Actions</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-header">
+            <span class="feature-icon">🔧</span>
+            <span class="feature-badge">auto</span>
+          </div>
+          <h3 class="feature-title">Auto-Fix Mode</h3>
+          <p class="feature-desc">Automatically apply verified patches. Every fix is tested before being committed.</p>
+          <div class="feature-tags">
+            <span class="tag">Patches</span>
+            <span class="tag">Verified</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-header">
+            <span class="feature-icon">📋</span>
+            <span class="feature-badge">reports</span>
+          </div>
+          <h3 class="feature-title">Clear Reports</h3>
+          <p class="feature-desc">Human-readable summaries. Machine-parseable JSON. Perfect for teams and automation.
+          </p>
+          <div class="feature-tags">
+            <span class="tag">JSON</span>
+            <span class="tag">Markdown</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="how-it-works section">
+    <div class="container">
+      <p class="section-label">// how it works</p>
+      <h2 class="section-title">Three steps to <span class="text-orange">verified code</span></h2>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3 class="step-title">Scan</h3>
+            <p class="step-desc">Detect your environment, analyze code patterns, identify issues across all languages.
+            </p>
+          </div>
+          <div class="step-visual">
+            <code>prooffix scan .</code>
+          </div>
+        </div>
+
+        <div class="step-connector">
+          <span class="connector-line"></span>
+          <span class="connector-arrow">→</span>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3 class="step-title">Fix</h3>
+            <p class="step-desc">Rule-based patches with verification. Every change is tested before applying.</p>
+          </div>
+          <div class="step-visual">
+            <code>--auto-fix</code>
+          </div>
+        </div>
+
+        <div class="step-connector">
+          <span class="connector-line"></span>
+          <span class="connector-arrow">→</span>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3 class="step-title">Report</h3>
+            <p class="step-desc">Generate human-readable + machine-parseable output for teams and CI.</p>
+          </div>
+          <div class="step-visual">
+            <code>--format=sarif</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLI Commands Section -->
+  <section id="cli" class="cli section">
+    <div class="container">
+      <p class="section-label">// cli commands</p>
+      <h2 class="section-title">Four modes for <span class="text-orange">every workflow</span></h2>
+
+      <div class="cli-grid">
+        <div class="cli-card">
+          <div class="cli-header">
+            <span class="cli-mode">Scan Mode</span>
+            <span class="cli-badge">default</span>
+          </div>
+          <div class="cli-terminal">
+            <code><span class="cmd-prefix">$</span> prooffix scan .</code>
+          </div>
+          <p class="cli-desc">Analyze your codebase and report issues without making changes.</p>
+        </div>
+
+        <div class="cli-card cli-card-highlight">
+          <div class="cli-header">
+            <span class="cli-mode">Auto-Fix Mode</span>
+            <span class="cli-badge cli-badge-orange">recommended</span>
+          </div>
+          <div class="cli-terminal">
+            <code><span class="cmd-prefix">$</span> prooffix scan . <span class="flag">--auto-fix</span></code>
+          </div>
+          <p class="cli-desc">Automatically apply safe, verified fixes to detected issues.</p>
+        </div>
+
+        <div class="cli-card">
+          <div class="cli-header">
+            <span class="cli-mode">Guided Refactor</span>
+            <span class="cli-badge">interactive</span>
+          </div>
+          <div class="cli-terminal">
+            <code><span class="cmd-prefix">$</span> prooffix scan . <span class="flag">--mode=guided-refactor</span></code>
+          </div>
+          <p class="cli-desc">Step-by-step guidance for complex refactoring tasks.</p>
+        </div>
+
+        <div class="cli-card">
+          <div class="cli-header">
+            <span class="cli-mode">CI Mode</span>
+            <span class="cli-badge">pipeline</span>
+          </div>
+          <div class="cli-terminal">
+            <code><span class="cmd-prefix">$</span> prooffix scan . <span class="flag">--ci</span></code>
+          </div>
+          <p class="cli-desc">Machine-readable output with SARIF reports and proper exit codes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Principles Section -->
+  <section id="principles" class="principles section">
+    <div class="container">
+      <p class="section-label">// core principles</p>
+      <h2 class="section-title">Built on <span class="text-orange">trust</span></h2>
+
+      <div class="principles-grid">
+        <div class="principle-card">
+          <div class="principle-icon">🤖</div>
+          <blockquote class="principle-quote">
+            "AI as assistant, <span class="text-orange">never</span> decision-maker"
+          </blockquote>
+          <p class="principle-desc">AI suggests. Rules verify. You decide. No black-box magic. Full transparency.</p>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-icon">✅</div>
+          <blockquote class="principle-quote">
+            "Every change is <span class="text-orange">verifiable</span> & reversible"
+          </blockquote>
+          <p class="principle-desc">Git snapshots before every operation. Full audit trail. One command to undo.</p>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-icon">🔒</div>
+          <blockquote class="principle-quote">
+            "Local-first, your code stays <span class="text-orange">private</span>"
+          </blockquote>
+          <p class="principle-desc">Everything runs on your machine. No cloud uploads. No telemetry. Ever.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section section">
+    <div class="container">
+      <div class="cta-card">
+        <p class="cta-label">// get started</p>
+        <h2 class="cta-title">
+          Get started in<br>
+          <span class="text-orange">2 commands.</span>
+        </h2>
+        <p class="cta-desc">No credit card. No signup. Just install and run.</p>
+
+        <div class="cta-commands">
+          <div class="cta-command">
+            <code>npm install -g prooffix</code>
+            <button class="copy-btn" data-copy="npm install -g prooffix" title="Copy">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="cta-command">
+            <code>prooffix scan . --auto-fix</code>
+            <button class="copy-btn" data-copy="prooffix scan . --auto-fix" title="Copy">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="cta-buttons">
+          <a href="docs.html" class="btn btn-primary btn-lg">
+            Read the docs
+            <span class="btn-arrow">→</span>
+          </a>
+          <a href="feedback.html" class="btn btn-secondary">Share feedback</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <span class="logo-icon">⚡</span>
+            <span class="logo-text">ProofFix</span>
+          </a>
+          <p class="footer-tagline">Safe code evolution for developers who ship fast but don't break things.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-heading">Product</h4>
+          <ul class="footer-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#cli">CLI Commands</a></li>
+            <li><a href="docs.html">Documentation</a></li>
+            <li><a href="#principles">Principles</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-heading">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="docs.html">Getting Started</a></li>
+            <li><a href="docs.html#faq">FAQ</a></li>
+            <li><a href="https://github.com/prooffix/prooffix" target="_blank">GitHub</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-heading">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="privacy.html#terms">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Made with <span class="heart">🧡</span> for developers who care about code quality</p>
+        <p class="footer-copyright">© 2026 ProofFix. Open source under MIT license.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

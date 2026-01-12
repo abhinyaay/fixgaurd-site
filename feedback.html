@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Share your feedback about ProofFix - We'd love to hear from you.">
+    <title>Feedback - ProofFix</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="grid-bg"></div>
+    <div class="glow glow-top-left"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">ProofFix</span>
+            </a>
+
+            <nav class="nav" id="nav">
+                <a href="docs.html" class="nav-link">Docs</a>
+                <a href="index.html#features" class="nav-link">Features</a>
+                <a href="index.html#cli" class="nav-link">CLI</a>
+                <a href="feedback.html" class="nav-link" style="color: var(--accent);">Feedback</a>
+            </nav>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <p class="section-label">// we're listening</p>
+            <h1 class="section-title">Share Your <span class="text-orange">Feedback</span></h1>
+            <p class="section-desc">Help us make ProofFix better. Bug reports, feature requests, or just saying hi -
+                we'd love to hear from you.</p>
+        </div>
+    </section>
+
+    <!-- Feedback Form -->
+    <main class="page-content">
+        <div class="container">
+
+            <div class="form-card">
+                <form id="feedback-form" class="form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name *</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
+                        <span class="form-error" id="name-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email *</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com"
+                            required>
+                        <span class="form-error" id="email-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category" class="form-label">Category</label>
+                        <select id="category" name="category" class="form-input form-select">
+                            <option value="general">General Feedback</option>
+                            <option value="bug">Bug Report</option>
+                            <option value="feature">Feature Request</option>
+                            <option value="question">Question</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message *</label>
+                        <textarea id="message" name="message" class="form-input form-textarea"
+                            placeholder="Tell us what's on your mind. Be as detailed as you'd like..."
+                            required></textarea>
+                        <span class="form-error" id="message-error"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+                        <span class="btn-text">Send Feedback</span>
+                        <span class="btn-loader"></span>
+                    </button>
+
+                    <div class="form-success" id="form-success">
+                        <span>✓</span>
+                        <span>Thank you! Your feedback has been received. We'll get back to you soon.</span>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Alternative Contact -->
+            <section class="content-section" style="text-align: center; margin-top: 4rem;">
+                <h2>Other Ways to Reach Us</h2>
+                <p style="margin-bottom: 2rem;">Prefer to communicate differently? No problem.</p>
+
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://github.com/prooffix/prooffix/issues" target="_blank" class="btn btn-secondary">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"
+                            style="margin-right: 0.5rem;">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                        Open GitHub Issue
+                    </a>
+                    <a href="https://github.com/prooffix/prooffix/discussions" target="_blank"
+                        class="btn btn-secondary">
+                        💬 Join Discussions
+                    </a>
+                    <a href="mailto:hello@prooffix.dev" class="btn btn-secondary">
+                        ✉️ Email Us
+                    </a>
+                </div>
+            </section>
+
+            <!-- FAQ Quick Links -->
+            <section class="content-section" style="text-align: center; margin-top: 4rem;">
+                <h2>Before You Write</h2>
+                <p>Your question might already be answered in our docs:</p>
+                <ul style="list-style: none; padding: 0; margin-top: 1.5rem;">
+                    <li style="margin-bottom: 0.75rem;"><a href="docs.html#installation" style="color: var(--accent);">→
+                            Installation Guide</a></li>
+                    <li style="margin-bottom: 0.75rem;"><a href="docs.html#commands" style="color: var(--accent);">→
+                            Command Reference</a></li>
+                    <li style="margin-bottom: 0.75rem;"><a href="docs.html#faq" style="color: var(--accent);">→
+                            Frequently Asked Questions</a></li>
+                </ul>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <span class="logo-icon">⚡</span>
+                        <span class="logo-text">ProofFix</span>
+                    </a>
+                    <p class="footer-tagline">Safe code evolution for developers who ship fast but don't break things.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#cli">CLI Commands</a></li>
+                        <li><a href="docs.html">Documentation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="docs.html#quickstart">Getting Started</a></li>
+                        <li><a href="docs.html#faq">FAQ</a></li>
+                        <li><a href="https://github.com/prooffix/prooffix" target="_blank">GitHub</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="privacy.html#terms">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Made with <span class="heart">🧡</span> for developers who care about code quality</p>
+                <p class="footer-copyright">© 2026 ProofFix. Open source under MIT license.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

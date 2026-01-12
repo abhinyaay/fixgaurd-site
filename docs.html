@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="ProofFix Documentation - Learn how to install and use ProofFix for safe code evolution.">
+    <title>Documentation - ProofFix</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="grid-bg"></div>
+    <div class="glow glow-top-left"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">ProofFix</span>
+            </a>
+
+            <nav class="nav" id="nav">
+                <a href="docs.html" class="nav-link" style="color: var(--accent);">Docs</a>
+                <a href="index.html#features" class="nav-link">Features</a>
+                <a href="index.html#cli" class="nav-link">CLI</a>
+                <a href="feedback.html" class="nav-link">Feedback</a>
+            </nav>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <p class="section-label">// documentation</p>
+            <h1 class="section-title">Getting Started with <span class="text-orange">ProofFix</span></h1>
+            <p class="section-desc">Everything you need to install, configure, and use ProofFix for safe code evolution.
+            </p>
+        </div>
+    </section>
+
+    <!-- Documentation Content -->
+    <main class="page-content">
+        <div class="container">
+
+            <!-- Installation -->
+            <section class="content-section" id="installation">
+                <h2>Installation</h2>
+                <p>ProofFix can be installed via npm, Homebrew, or as a standalone binary.</p>
+
+                <h3>npm (Recommended)</h3>
+                <pre><code>npm install -g prooffix</code></pre>
+
+                <h3>Homebrew (macOS/Linux)</h3>
+                <pre><code>brew tap prooffix/tap
+brew install prooffix</code></pre>
+
+                <h3>Binary Download</h3>
+                <p>Download the latest release from <a href="https://github.com/prooffix/prooffix/releases"
+                        target="_blank" style="color: var(--accent);">GitHub Releases</a> for your platform.</p>
+
+                <h3>Verify Installation</h3>
+                <pre><code>prooffix --version
+# ProofFix v1.0.0</code></pre>
+            </section>
+
+            <!-- Quick Start -->
+            <section class="content-section" id="quickstart">
+                <h2>Quick Start</h2>
+                <p>Get started in under 2 minutes:</p>
+
+                <h3>1. Navigate to your project</h3>
+                <pre><code>cd /path/to/your/project</code></pre>
+
+                <h3>2. Run a scan</h3>
+                <pre><code>prooffix scan .</code></pre>
+                <p>This analyzes your codebase and reports any issues found.</p>
+
+                <h3>3. Auto-fix issues</h3>
+                <pre><code>prooffix scan . --auto-fix</code></pre>
+                <p>Automatically apply verified fixes. A Git snapshot is created before any changes.</p>
+
+                <h3>4. Review results</h3>
+                <p>ProofFix generates a clear report showing what was fixed and what needs manual attention.</p>
+            </section>
+
+            <!-- Commands Reference -->
+            <section class="content-section" id="commands">
+                <h2>Command Reference</h2>
+
+                <h3>prooffix scan [path]</h3>
+                <p>Scan a directory or file for issues.</p>
+                <pre><code># Scan current directory
+prooffix scan .
+
+# Scan specific directory
+prooffix scan ./src
+
+# Scan single file
+prooffix scan ./src/index.ts</code></pre>
+
+                <h3>Common Flags</h3>
+                <ul>
+                    <li><code>--auto-fix</code> - Automatically apply verified fixes</li>
+                    <li><code>--mode=guided-refactor</code> - Interactive refactoring mode</li>
+                    <li><code>--ci</code> - CI-friendly output with SARIF reports</li>
+                    <li><code>--format=[json|sarif|markdown]</code> - Output format</li>
+                    <li><code>--severity=[error|warning|info]</code> - Minimum severity to report</li>
+                    <li><code>--no-snapshot</code> - Skip Git snapshot (use with caution)</li>
+                    <li><code>--config=[path]</code> - Path to config file</li>
+                </ul>
+
+                <h3>prooffix rollback</h3>
+                <p>Undo the last auto-fix operation.</p>
+                <pre><code>prooffix rollback</code></pre>
+
+                <h3>prooffix init</h3>
+                <p>Initialize a ProofFix configuration file.</p>
+                <pre><code>prooffix init</code></pre>
+            </section>
+
+            <!-- Configuration -->
+            <section class="content-section" id="config">
+                <h2>Configuration</h2>
+                <p>Create a <code>.prooffixrc.json</code> or <code>prooffix.config.js</code> in your project root:</p>
+
+                <pre><code>{
+  "languages": ["typescript", "javascript", "python"],
+  "exclude": ["node_modules", "dist", ".git"],
+  "rules": {
+    "security": "error",
+    "performance": "warning",
+    "style": "info"
+  },
+  "autoFix": {
+    "enabled": true,
+    "requireConfirmation": false
+  },
+  "snapshot": {
+    "enabled": true,
+    "branch": "prooffix-backup"
+  }
+}</code></pre>
+            </section>
+
+            <!-- CI Integration -->
+            <section class="content-section" id="ci">
+                <h2>CI Integration</h2>
+                <p>ProofFix works seamlessly in CI/CD pipelines.</p>
+
+                <h3>GitHub Actions</h3>
+                <pre><code>name: ProofFix Scan
+on: [push, pull_request]
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install -g prooffix
+      - run: prooffix scan . --ci
+      - uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: prooffix-report.sarif</code></pre>
+
+                <h3>Exit Codes</h3>
+                <ul>
+                    <li><code>0</code> - No issues found</li>
+                    <li><code>1</code> - Issues found (warnings or errors)</li>
+                    <li><code>2</code> - Critical errors that need immediate attention</li>
+                </ul>
+            </section>
+
+            <!-- FAQ -->
+            <section class="content-section" id="faq">
+                <h2>Frequently Asked Questions</h2>
+
+                <h3>Does ProofFix send my code to the cloud?</h3>
+                <p>No. ProofFix is 100% local-first. Your code never leaves your machine. There's no telemetry, no cloud
+                    processing, no data collection.</p>
+
+                <h3>What languages are supported?</h3>
+                <p>Currently: TypeScript, JavaScript, Python, Go, Rust, and Java. More languages are being added
+                    regularly.</p>
+
+                <h3>Can I undo changes made by auto-fix?</h3>
+                <p>Yes! ProofFix creates a Git snapshot before making any changes. Run <code>prooffix rollback</code> to
+                    undo.</p>
+
+                <h3>Is ProofFix free?</h3>
+                <p>Yes. ProofFix is open source under the MIT license.</p>
+
+                <h3>How is this different from other linters?</h3>
+                <p>ProofFix goes beyond linting. It verifies proposed changes, creates rollback points, and ensures
+                    every fix is safe before applying.</p>
+            </section>
+
+            <!-- Support -->
+            <section class="content-section">
+                <h2>Need Help?</h2>
+                <p>We're here to help you succeed with ProofFix.</p>
+                <ul>
+                    <li><a href="https://github.com/prooffix/prooffix/issues" target="_blank"
+                            style="color: var(--accent);">Report a bug on GitHub</a></li>
+                    <li><a href="https://github.com/prooffix/prooffix/discussions" target="_blank"
+                            style="color: var(--accent);">Join the community discussions</a></li>
+                    <li><a href="feedback.html" style="color: var(--accent);">Send us feedback directly</a></li>
+                </ul>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <span class="logo-icon">⚡</span>
+                        <span class="logo-text">ProofFix</span>
+                    </a>
+                    <p class="footer-tagline">Safe code evolution for developers who ship fast but don't break things.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#cli">CLI Commands</a></li>
+                        <li><a href="docs.html">Documentation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#quickstart">Getting Started</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="https://github.com/prooffix/prooffix" target="_blank">GitHub</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="privacy.html#terms">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Made with <span class="heart">🧡</span> for developers who care about code quality</p>
+                <p class="footer-copyright">© 2026 ProofFix. Open source under MIT license.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
