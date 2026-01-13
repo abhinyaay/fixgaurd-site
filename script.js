@@ -2,8 +2,9 @@
 const commands = [
   { cmd: 'prooffix scan .', output: '✓ Scanning 127 files...\n✓ Found 3 issues (2 auto-fixable)' },
   { cmd: 'prooffix scan . --auto-fix', output: '✓ Applied 2 verified patches\n✓ 1 issue requires manual review' },
-  { cmd: 'prooffix scan . --mode=guided-refactor', output: '? Starting guided refactor...\n→ Select transformation: [1-5]' },
-  { cmd: 'prooffix scan . --ci', output: '✓ SARIF report generated\n✓ Exit code: 0 (all checks passed)' }
+  { cmd: 'prooffix heal .', output: '⚡ AI-powered fix loop started...\n✓ Generated 3 test cases\n✓ All tests passing' },
+  { cmd: 'prooffix report . --format=sarif', output: '✓ SARIF report generated\n→ .prooffix/reports/sarif.json' },
+  { cmd: 'prooffix rollback abc123', output: '✓ Snapshot restored\n✓ 2 files reverted to previous state' }
 ];
 
 let commandIndex = 0;

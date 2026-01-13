@@ -314,51 +314,62 @@
   <section id="cli" class="cli section">
     <div class="container">
       <p class="section-label">// cli commands</p>
-      <h2 class="section-title">Four modes for <span class="text-orange">every workflow</span></h2>
+      <h2 class="section-title">Five commands for <span class="text-orange">every workflow</span></h2>
 
       <div class="cli-grid">
         <div class="cli-card">
           <div class="cli-header">
-            <span class="cli-mode">Scan Mode</span>
-            <span class="cli-badge">default</span>
+            <span class="cli-mode">Scan</span>
+            <span class="cli-badge">observe</span>
           </div>
           <div class="cli-terminal">
             <code><span class="cmd-prefix">$</span> prooffix scan .</code>
           </div>
-          <p class="cli-desc">Analyze your codebase and report issues without making changes.</p>
+          <p class="cli-desc">Analyze code for issues. Read-only by default.</p>
         </div>
 
         <div class="cli-card cli-card-highlight">
           <div class="cli-header">
-            <span class="cli-mode">Auto-Fix Mode</span>
+            <span class="cli-mode">Auto-Fix</span>
             <span class="cli-badge cli-badge-orange">recommended</span>
           </div>
           <div class="cli-terminal">
             <code><span class="cmd-prefix">$</span> prooffix scan . <span class="flag">--auto-fix</span></code>
           </div>
-          <p class="cli-desc">Automatically apply safe, verified fixes to detected issues.</p>
+          <p class="cli-desc">Apply safe, verified fixes automatically.</p>
         </div>
 
         <div class="cli-card">
           <div class="cli-header">
-            <span class="cli-mode">Guided Refactor</span>
-            <span class="cli-badge">interactive</span>
+            <span class="cli-mode">Heal</span>
+            <span class="cli-badge cli-badge-orange">AI-powered</span>
           </div>
           <div class="cli-terminal">
-            <code><span class="cmd-prefix">$</span> prooffix scan . <span class="flag">--mode=guided-refactor</span></code>
+            <code><span class="cmd-prefix">$</span> prooffix heal .</code>
           </div>
-          <p class="cli-desc">Step-by-step guidance for complex refactoring tasks.</p>
+          <p class="cli-desc">AI-powered test generation and fix loop. Uses Ollama by default.</p>
         </div>
 
         <div class="cli-card">
           <div class="cli-header">
-            <span class="cli-mode">CI Mode</span>
-            <span class="cli-badge">pipeline</span>
+            <span class="cli-mode">Report</span>
+            <span class="cli-badge">output</span>
           </div>
           <div class="cli-terminal">
-            <code><span class="cmd-prefix">$</span> prooffix scan . <span class="flag">--ci</span></code>
+            <code><span class="cmd-prefix">$</span> prooffix report . <span class="flag">--format=sarif</span></code>
           </div>
-          <p class="cli-desc">Machine-readable output with SARIF reports and proper exit codes.</p>
+          <p class="cli-desc">Generate Markdown, JSON, or SARIF reports.</p>
+        </div>
+
+        <div class="cli-card">
+          <div class="cli-header">
+            <span class="cli-mode">Rollback</span>
+            <span class="cli-badge">safety</span>
+          </div>
+          <div class="cli-terminal">
+            <code><span class="cmd-prefix">$</span> prooffix rollback <span class="flag">&lt;run-id&gt;</span></code>
+          </div>
+          <p class="cli-desc">Undo changes from any previous run instantly.</p>
         </div>
       </div>
     </div>

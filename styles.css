@@ -1053,6 +1053,209 @@ h4 {
   color: var(--text-primary);
 }
 
+/* ===== Documentation Specific Styles ===== */
+
+/* Table of Contents */
+.docs-toc {
+  padding: 2rem 0;
+}
+
+.toc-card {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+}
+
+.toc-card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.toc-list {
+  columns: 2;
+  column-gap: 2rem;
+  padding-left: 1.25rem;
+}
+
+.toc-list li {
+  margin-bottom: 0.5rem;
+  break-inside: avoid;
+}
+
+.toc-list a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.toc-list a:hover {
+  color: var(--accent);
+}
+
+/* Documentation Tables */
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.docs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.docs-table thead {
+  background: var(--bg-secondary);
+}
+
+.docs-table th,
+.docs-table td {
+  padding: 0.875rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.docs-table th {
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.docs-table td {
+  color: var(--text-secondary);
+}
+
+.docs-table tbody tr:hover {
+  background: var(--bg-card-hover);
+}
+
+.docs-table code {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: 0.15rem 0.4rem;
+  background: var(--bg-primary);
+  border-radius: 4px;
+  color: var(--accent);
+}
+
+/* Command Blocks */
+.command-block {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+}
+
+.command-block h3 {
+  margin-top: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+}
+
+.command-block h4 {
+  font-size: 1rem;
+  margin: 1.5rem 0 0.75rem;
+  color: var(--text-primary);
+}
+
+/* Provider Cards */
+.provider-card {
+  margin: 2rem 0;
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  transition: all var(--transition-normal);
+}
+
+.provider-card:hover {
+  border-color: var(--accent);
+}
+
+.provider-card h3 {
+  margin-top: 0;
+  font-size: 1.125rem;
+  color: var(--text-primary);
+}
+
+.provider-card pre {
+  margin-bottom: 1rem;
+}
+
+.provider-card p {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+/* Feature List */
+.feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.feature-list li:last-child {
+  border-bottom: none;
+}
+
+/* Fix List */
+.fix-list {
+  list-style: none;
+  padding: 0;
+}
+
+.fix-list li {
+  padding: 0.5rem 0;
+  color: var(--text-secondary);
+}
+
+.fix-list code {
+  margin-right: 0.5rem;
+}
+
+/* Troubleshooting Items */
+.troubleshoot-item {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  border-left: 4px solid var(--accent);
+}
+
+.troubleshoot-item h3 {
+  margin-top: 0;
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+.troubleshoot-item p {
+  margin-bottom: 0.75rem;
+}
+
+.troubleshoot-item pre {
+  margin-bottom: 0;
+}
+
+/* Responsive TOC */
+@media (max-width: 600px) {
+  .toc-list {
+    columns: 1;
+  }
+}
+
 /* Form Styles */
 .form-card {
   max-width: 600px;

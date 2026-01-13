@@ -27,6 +27,7 @@
             <a href="/" class="logo">
                 <img src="assets/logo.png" alt="ProofFix Logo" class="logo-image">
             </a>
+
             <nav class="nav" id="nav">
                 <a href="docs.html" class="nav-link" style="color: var(--accent);">Docs</a>
                 <a href="index.html#features" class="nav-link">Features</a>
@@ -46,9 +47,28 @@
     <section class="page-header">
         <div class="container">
             <p class="section-label">// documentation</p>
-            <h1 class="section-title">Getting Started with <span class="text-orange">ProofFix</span></h1>
-            <p class="section-desc">Everything you need to install, configure, and use ProofFix for safe code evolution.
-            </p>
+            <h1 class="section-title">ProofFix <span class="text-orange">Documentation</span></h1>
+            <p class="section-desc">Safe Code Evolution. Zero Guesswork.</p>
+        </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section class="docs-toc">
+        <div class="container">
+            <div class="toc-card">
+                <h2>Table of Contents</h2>
+                <ol class="toc-list">
+                    <li><a href="#core-principles">Core Principles</a></li>
+                    <li><a href="#requirements">Requirements</a></li>
+                    <li><a href="#installation">Installation</a></li>
+                    <li><a href="#commands">Commands</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#ai-provider-setup">AI Provider Setup</a></li>
+                    <li><a href="#configuration">Configuration</a></li>
+                    <li><a href="#cicd-integration">CI/CD Integration</a></li>
+                    <li><a href="#troubleshooting">Troubleshooting</a></li>
+                </ol>
+            </div>
         </div>
     </section>
 
@@ -56,117 +76,601 @@
     <main class="page-content">
         <div class="container">
 
+            <!-- Core Principles -->
+            <section class="content-section" id="core-principles">
+                <h2>Core Principles</h2>
+                <div class="table-wrapper">
+                    <table class="docs-table">
+                        <thead>
+                            <tr>
+                                <th>Principle</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>AI has zero authority</strong></td>
+                                <td>Tools and tests are the judges, not AI</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Every change is verifiable</strong></td>
+                                <td>Backed by real linters, scanners, tests</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Every change is reversible</strong></td>
+                                <td>Git-based snapshots for instant rollback</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Every action is logged</strong></td>
+                                <td>Immutable, timestamped run logs</td>
+                            </tr>
+                            <tr>
+                                <td><strong>If uncertain → report</strong></td>
+                                <td>Never guess, always report</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Requirements -->
+            <section class="content-section" id="requirements">
+                <h2>Requirements</h2>
+
+                <h3>System Requirements</h3>
+                <div class="table-wrapper">
+                    <table class="docs-table">
+                        <thead>
+                            <tr>
+                                <th>Requirement</th>
+                                <th>Version</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Node.js</td>
+                                <td>18+</td>
+                                <td>Required for CLI</td>
+                            </tr>
+                            <tr>
+                                <td>npm</td>
+                                <td>9+</td>
+                                <td>Package manager</td>
+                            </tr>
+                            <tr>
+                                <td>Python</td>
+                                <td>3.9+</td>
+                                <td>For analyzers (optional)</td>
+                            </tr>
+                            <tr>
+                                <td>Git</td>
+                                <td>2.0+</td>
+                                <td>For snapshots</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Optional Dependencies</h3>
+                <div class="table-wrapper">
+                    <table class="docs-table">
+                        <thead>
+                            <tr>
+                                <th>Tool</th>
+                                <th>Purpose</th>
+                                <th>Auto-detected</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ESLint</td>
+                                <td>JavaScript/TypeScript analysis</td>
+                                <td>✅</td>
+                            </tr>
+                            <tr>
+                                <td>Ruff</td>
+                                <td>Python analysis</td>
+                                <td>✅</td>
+                            </tr>
+                            <tr>
+                                <td>Bandit</td>
+                                <td>Python security scanning</td>
+                                <td>✅</td>
+                            </tr>
+                            <tr>
+                                <td>Jest/Vitest/Mocha</td>
+                                <td>JavaScript testing</td>
+                                <td>✅</td>
+                            </tr>
+                            <tr>
+                                <td>pytest</td>
+                                <td>Python testing</td>
+                                <td>✅</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
             <!-- Installation -->
             <section class="content-section" id="installation">
                 <h2>Installation</h2>
-                <p>ProofFix can be installed via npm, Homebrew, or as a standalone binary.</p>
 
-                <h3>npm (Recommended)</h3>
+                <h3>From npm (Recommended)</h3>
                 <pre><code>npm install -g prooffix</code></pre>
 
-                <h3>Homebrew (macOS/Linux)</h3>
-                <pre><code>brew tap prooffix/tap
-brew install prooffix</code></pre>
+                <h3>From Source</h3>
+                <pre><code># Clone the repository
+git clone https://github.com/your-org/prooffix.git
+cd prooffix
 
-                <h3>Binary Download</h3>
-                <p>Download the latest release from <a href="https://github.com/prooffix/prooffix/releases"
-                        target="_blank" style="color: var(--accent);">GitHub Releases</a> for your platform.</p>
+# Install dependencies
+npm install
+
+# Build
+npm run build
+
+# Link globally
+npm link
+
+# Verify installation
+prooffix --version</code></pre>
 
                 <h3>Verify Installation</h3>
-                <pre><code>prooffix --version
-# ProofFix v1.0.0</code></pre>
+                <pre><code>prooffix --help</code></pre>
+                <p>Expected output:</p>
+                <pre><code>Usage: prooffix [options] [command]
+
+A verifiable, local-first system for safe code evolution
+
+Commands:
+  scan [options] &lt;path&gt;        Analyze and optionally fix code issues
+  heal [options] &lt;path&gt;        AI-powered test generation and fix loop
+  report [options] &lt;path&gt;      Generate analysis reports
+  rollback [options] &lt;run-id&gt;  Rollback changes from a specific run
+  help [command]               display help for command</code></pre>
             </section>
 
-            <!-- Quick Start -->
-            <section class="content-section" id="quickstart">
-                <h2>Quick Start</h2>
-                <p>Get started in under 2 minutes:</p>
-
-                <h3>1. Navigate to your project</h3>
-                <pre><code>cd /path/to/your/project</code></pre>
-
-                <h3>2. Run a scan</h3>
-                <pre><code>prooffix scan .</code></pre>
-                <p>This analyzes your codebase and reports any issues found.</p>
-
-                <h3>3. Auto-fix issues</h3>
-                <pre><code>prooffix scan . --auto-fix</code></pre>
-                <p>Automatically apply verified fixes. A Git snapshot is created before any changes.</p>
-
-                <h3>4. Review results</h3>
-                <p>ProofFix generates a clear report showing what was fixed and what needs manual attention.</p>
-            </section>
-
-            <!-- Commands Reference -->
+            <!-- Commands -->
             <section class="content-section" id="commands">
-                <h2>Command Reference</h2>
+                <h2>Commands</h2>
 
-                <h3>prooffix scan [path]</h3>
-                <p>Scan a directory or file for issues.</p>
-                <pre><code># Scan current directory
+                <!-- prooffix scan -->
+                <div class="command-block">
+                    <h3><code>prooffix scan</code></h3>
+                    <p>Analyze code for issues with optional auto-fixing.</p>
+                    <pre><code># Read-only analysis (default)
 prooffix scan .
 
-# Scan specific directory
-prooffix scan ./src
+# Auto-fix low-risk issues
+prooffix scan . --auto-fix
 
-# Scan single file
-prooffix scan ./src/index.ts</code></pre>
+# Guided refactor (propose all changes)
+prooffix scan . --mode=guided-refactor
 
-                <h3>Common Flags</h3>
-                <ul>
-                    <li><code>--auto-fix</code> - Automatically apply verified fixes</li>
-                    <li><code>--mode=guided-refactor</code> - Interactive refactoring mode</li>
-                    <li><code>--ci</code> - CI-friendly output with SARIF reports</li>
-                    <li><code>--format=[json|sarif|markdown]</code> - Output format</li>
-                    <li><code>--severity=[error|warning|info]</code> - Minimum severity to report</li>
-                    <li><code>--no-snapshot</code> - Skip Git snapshot (use with caution)</li>
-                    <li><code>--config=[path]</code> - Path to config file</li>
+# CI mode (strict, exits 1 on errors)
+prooffix scan . --ci</code></pre>
+
+                    <h4>Options</h4>
+                    <div class="table-wrapper">
+                        <table class="docs-table">
+                            <thead>
+                                <tr>
+                                    <th>Flag</th>
+                                    <th>Description</th>
+                                    <th>Default</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>--auto-fix</code></td>
+                                    <td>Apply low-risk fixes automatically</td>
+                                    <td>off</td>
+                                </tr>
+                                <tr>
+                                    <td><code>--mode &lt;mode&gt;</code></td>
+                                    <td>observe, safe-fix, guided-refactor, ci</td>
+                                    <td>observe</td>
+                                </tr>
+                                <tr>
+                                    <td><code>--ci</code></td>
+                                    <td>CI mode: strict, non-interactive</td>
+                                    <td>off</td>
+                                </tr>
+                                <tr>
+                                    <td><code>--config &lt;path&gt;</code></td>
+                                    <td>Custom configuration file</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td><code>-v, --verbose</code></td>
+                                    <td>Show detailed output</td>
+                                    <td>off</td>
+                                </tr>
+                                <tr>
+                                    <td><code>-q, --quiet</code></td>
+                                    <td>Suppress non-essential output</td>
+                                    <td>off</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4>Execution Modes</h4>
+                    <div class="table-wrapper">
+                        <table class="docs-table">
+                            <thead>
+                                <tr>
+                                    <th>Mode</th>
+                                    <th>Description</th>
+                                    <th>Auto-Fix</th>
+                                    <th>Interactive</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>observe</code></td>
+                                    <td>Read-only analysis</td>
+                                    <td>❌</td>
+                                    <td>✅</td>
+                                </tr>
+                                <tr>
+                                    <td><code>safe-fix</code></td>
+                                    <td>Apply low-risk fixes</td>
+                                    <td>✅</td>
+                                    <td>✅</td>
+                                </tr>
+                                <tr>
+                                    <td><code>guided-refactor</code></td>
+                                    <td>Propose all changes</td>
+                                    <td>✅ (approval)</td>
+                                    <td>✅</td>
+                                </tr>
+                                <tr>
+                                    <td><code>ci</code></td>
+                                    <td>Strict, non-interactive</td>
+                                    <td>❌</td>
+                                    <td>❌</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- prooffix heal -->
+                <div class="command-block">
+                    <h3><code>prooffix heal</code></h3>
+                    <p>AI-powered test generation and fix loop.</p>
+                    <pre><code># Use Ollama (local, free - default)
+prooffix heal .
+
+# Use OpenAI
+prooffix heal . --ai-provider=openai
+
+# Use Groq (free cloud)
+prooffix heal . --ai-provider=groq
+
+# Limit iterations
+prooffix heal . --max-iterations=3
+
+# Dry run (preview only)
+prooffix heal . --dry-run</code></pre>
+
+                    <h4>Options</h4>
+                    <div class="table-wrapper">
+                        <table class="docs-table">
+                            <thead>
+                                <tr>
+                                    <th>Flag</th>
+                                    <th>Description</th>
+                                    <th>Default</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>--max-iterations &lt;n&gt;</code></td>
+                                    <td>Maximum fix attempts</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td><code>--ai-provider &lt;name&gt;</code></td>
+                                    <td>ollama, openai, anthropic, groq</td>
+                                    <td>ollama</td>
+                                </tr>
+                                <tr>
+                                    <td><code>--model &lt;model&gt;</code></td>
+                                    <td>AI model name</td>
+                                    <td>codellama</td>
+                                </tr>
+                                <tr>
+                                    <td><code>--dry-run</code></td>
+                                    <td>Preview without applying</td>
+                                    <td>off</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4>How It Works</h4>
+                    <pre><code>1. Create safety snapshot
+2. Run existing tests
+3. For each failure → AI generates fix
+4. Apply fix
+5. Re-run tests
+6. Repeat until pass or max iterations
+7. Show summary</code></pre>
+                </div>
+
+                <!-- prooffix report -->
+                <div class="command-block">
+                    <h3><code>prooffix report</code></h3>
+                    <p>Generate analysis reports.</p>
+                    <pre><code># Markdown report (default)
+prooffix report .
+
+# JSON report
+prooffix report . --format=json
+
+# SARIF report (for GitHub/GitLab)
+prooffix report . --format=sarif
+
+# Custom output path
+prooffix report . --output=./reports/scan.md</code></pre>
+
+                    <h4>Options</h4>
+                    <div class="table-wrapper">
+                        <table class="docs-table">
+                            <thead>
+                                <tr>
+                                    <th>Flag</th>
+                                    <th>Description</th>
+                                    <th>Default</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>--format &lt;fmt&gt;</code></td>
+                                    <td>markdown, json, sarif</td>
+                                    <td>markdown</td>
+                                </tr>
+                                <tr>
+                                    <td><code>--output &lt;path&gt;</code></td>
+                                    <td>Output file path</td>
+                                    <td>stdout</td>
+                                </tr>
+                                <tr>
+                                    <td><code>--run-id &lt;id&gt;</code></td>
+                                    <td>Report for specific run</td>
+                                    <td>latest</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- prooffix rollback -->
+                <div class="command-block">
+                    <h3><code>prooffix rollback</code></h3>
+                    <p>Revert changes from a specific run.</p>
+                    <pre><code># Rollback by run ID
+prooffix rollback abc123
+
+# Preview what would be restored
+prooffix rollback abc123 --dry-run</code></pre>
+                    <p>Run IDs are shown after each scan/heal operation.</p>
+                </div>
+            </section>
+
+            <!-- Features -->
+            <section class="content-section" id="features">
+                <h2>Features</h2>
+
+                <h3>Multi-Language Support</h3>
+                <div class="table-wrapper">
+                    <table class="docs-table">
+                        <thead>
+                            <tr>
+                                <th>Language</th>
+                                <th>Static Analysis</th>
+                                <th>Security Scan</th>
+                                <th>Fix Templates</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>TypeScript</td>
+                                <td>✅ ESLint</td>
+                                <td>✅ Secrets</td>
+                                <td>✅ 15+ rules</td>
+                            </tr>
+                            <tr>
+                                <td>JavaScript</td>
+                                <td>✅ ESLint</td>
+                                <td>✅ Secrets</td>
+                                <td>✅ 15+ rules</td>
+                            </tr>
+                            <tr>
+                                <td>Python</td>
+                                <td>✅ Ruff</td>
+                                <td>✅ Bandit</td>
+                                <td>✅ 10+ rules</td>
+                            </tr>
+                            <tr>
+                                <td>Go</td>
+                                <td>✅</td>
+                                <td>✅</td>
+                                <td>🔜</td>
+                            </tr>
+                            <tr>
+                                <td>Rust</td>
+                                <td>✅</td>
+                                <td>✅</td>
+                                <td>🔜</td>
+                            </tr>
+                            <tr>
+                                <td>Java</td>
+                                <td>✅</td>
+                                <td>✅</td>
+                                <td>🔜</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Security Hardening (OWASP-Compliant)</h3>
+                <ul class="feature-list">
+                    <li>✅ Hardcoded secret detection (API keys, passwords)</li>
+                    <li>✅ SQL injection prevention</li>
+                    <li>✅ XSS vulnerability detection</li>
+                    <li>✅ Rate limiting checks</li>
+                    <li>✅ Input validation checks</li>
                 </ul>
 
-                <h3>prooffix rollback</h3>
-                <p>Undo the last auto-fix operation.</p>
-                <pre><code>prooffix rollback</code></pre>
+                <h3>Supported Fixes</h3>
 
-                <h3>prooffix init</h3>
-                <p>Initialize a ProofFix configuration file.</p>
-                <pre><code>prooffix init</code></pre>
+                <h4>JavaScript/TypeScript</h4>
+                <ul class="fix-list">
+                    <li><code>no-unused-vars</code> - Remove unused variables</li>
+                    <li><code>semi</code> - Add missing semicolons</li>
+                    <li><code>eqeqeq</code> - Use strict equality (<code>===</code>)</li>
+                    <li><code>prefer-const</code> - Use const instead of let</li>
+                    <li><code>no-var</code> - Use let/const instead of var</li>
+                    <li><code>no-console</code> - Remove console statements</li>
+                    <li><code>no-trailing-spaces</code> - Remove trailing whitespace</li>
+                </ul>
+
+                <h4>Python</h4>
+                <ul class="fix-list">
+                    <li><code>F401</code> - Remove unused imports</li>
+                    <li><code>F841</code> - Remove unused variables</li>
+                    <li><code>E711</code> - Use <code>is None</code> instead of <code>== None</code></li>
+                    <li><code>W291</code> - Remove trailing whitespace</li>
+                    <li><code>W292</code> - Add newline at end of file</li>
+                </ul>
+
+                <h4>Security</h4>
+                <ul class="fix-list">
+                    <li><code>secret-detection</code> - Move secrets to environment variables</li>
+                </ul>
+            </section>
+
+            <!-- AI Provider Setup -->
+            <section class="content-section" id="ai-provider-setup">
+                <h2>AI Provider Setup</h2>
+
+                <div class="provider-card">
+                    <h3>Option 1: Ollama (Local, Free) - RECOMMENDED</h3>
+                    <pre><code># Step 1: Install Ollama
+curl -fsSL https://ollama.com/install.sh | sh
+
+# Step 2: Start the Ollama server
+ollama serve
+
+# Step 3: Pull a model (one-time, ~4GB download)
+ollama pull codellama
+
+# Step 4: Use ProofFix
+prooffix heal .</code></pre>
+                    <p><strong>Pros:</strong> Free, private, no API key needed<br>
+                        <strong>Cons:</strong> Requires ~4GB disk space, local compute
+                    </p>
+                </div>
+
+                <div class="provider-card">
+                    <h3>Option 2: Groq (Cloud, Free Tier) - FAST!</h3>
+                    <pre><code># Step 1: Get FREE API key from https://console.groq.com
+
+# Step 2: Set environment variable
+export GROQ_API_KEY=gsk-your-key-here
+
+# Step 3: Use ProofFix with Groq
+prooffix heal . --ai-provider=groq</code></pre>
+                    <p><strong>Pros:</strong> Free tier, very fast inference<br>
+                        <strong>Cons:</strong> Requires internet, API key
+                    </p>
+                </div>
+
+                <div class="provider-card">
+                    <h3>Option 3: OpenAI (Cloud, Paid)</h3>
+                    <pre><code># Step 1: Get API key from https://platform.openai.com
+
+# Step 2: Set environment variable
+export OPENAI_API_KEY=sk-your-key-here
+
+# Step 3: Use ProofFix with OpenAI
+prooffix heal . --ai-provider=openai --model=gpt-4</code></pre>
+                    <p><strong>Pros:</strong> High quality, GPT-4<br>
+                        <strong>Cons:</strong> Paid, requires API key
+                    </p>
+                </div>
+
+                <div class="provider-card">
+                    <h3>Option 4: Anthropic Claude (Cloud, Paid)</h3>
+                    <pre><code># Step 1: Get API key from https://console.anthropic.com
+
+# Step 2: Set environment variable
+export ANTHROPIC_API_KEY=sk-ant-your-key-here
+
+# Step 3: Use ProofFix with Anthropic
+prooffix heal . --ai-provider=anthropic</code></pre>
+                </div>
             </section>
 
             <!-- Configuration -->
-            <section class="content-section" id="config">
+            <section class="content-section" id="configuration">
                 <h2>Configuration</h2>
-                <p>Create a <code>.prooffixrc.json</code> or <code>prooffix.config.js</code> in your project root:</p>
 
-                <pre><code>{
-  "languages": ["typescript", "javascript", "python"],
-  "exclude": ["node_modules", "dist", ".git"],
-  "rules": {
-    "security": "error",
-    "performance": "warning",
-    "style": "info"
-  },
-  "autoFix": {
-    "enabled": true,
-    "requireConfirmation": false
-  },
-  "snapshot": {
-    "enabled": true,
-    "branch": "prooffix-backup"
-  }
-}</code></pre>
+                <h3>Environment Variables</h3>
+                <div class="table-wrapper">
+                    <table class="docs-table">
+                        <thead>
+                            <tr>
+                                <th>Variable</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>OPENAI_API_KEY</code></td>
+                                <td>OpenAI API key</td>
+                            </tr>
+                            <tr>
+                                <td><code>ANTHROPIC_API_KEY</code></td>
+                                <td>Anthropic API key</td>
+                            </tr>
+                            <tr>
+                                <td><code>GROQ_API_KEY</code></td>
+                                <td>Groq API key</td>
+                            </tr>
+                            <tr>
+                                <td><code>PROOFFIX_DEBUG</code></td>
+                                <td>Enable debug logging</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Project Structure</h3>
+                <p>After running ProofFix, your project will have:</p>
+                <pre><code>your-project/
+├── .prooffix/
+│   ├── logs/           # Run logs (JSON)
+│   ├── snapshots/      # Git snapshots
+│   └── reports/        # Generated reports</code></pre>
             </section>
 
-            <!-- CI Integration -->
-            <section class="content-section" id="ci">
-                <h2>CI Integration</h2>
-                <p>ProofFix works seamlessly in CI/CD pipelines.</p>
+            <!-- CI/CD Integration -->
+            <section class="content-section" id="cicd-integration">
+                <h2>CI/CD Integration</h2>
 
                 <h3>GitHub Actions</h3>
                 <pre><code>name: ProofFix Scan
+
 on: [push, pull_request]
 
 jobs:
-  scan:
+  prooffix:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -174,54 +678,99 @@ jobs:
         with:
           node-version: '20'
       - run: npm install -g prooffix
-      - run: prooffix scan . --ci
-      - uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: prooffix-report.sarif</code></pre>
+      - run: prooffix scan . --ci</code></pre>
+
+                <h3>GitLab CI</h3>
+                <pre><code>prooffix:
+  image: node:20
+  script:
+    - npm install -g prooffix
+    - prooffix scan . --ci
+  artifacts:
+    reports:
+      sast: .prooffix/reports/sarif.json</code></pre>
 
                 <h3>Exit Codes</h3>
+                <div class="table-wrapper">
+                    <table class="docs-table">
+                        <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Meaning</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0</td>
+                                <td>Success, no issues</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Issues found or error</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Troubleshooting -->
+            <section class="content-section" id="troubleshooting">
+                <h2>Troubleshooting</h2>
+
+                <div class="troubleshoot-item">
+                    <h3>"AI provider not available"</h3>
+                    <p><strong>Cause:</strong> Ollama is not running or API key not set.</p>
+                    <p><strong>Solution:</strong></p>
+                    <pre><code># For Ollama
+ollama serve
+
+# For cloud providers
+export OPENAI_API_KEY=sk-...  # or
+export GROQ_API_KEY=gsk-...</code></pre>
+                </div>
+
+                <div class="troubleshoot-item">
+                    <h3>"Snapshot not found for run ID"</h3>
+                    <p><strong>Cause:</strong> Running rollback from wrong directory.</p>
+                    <p><strong>Solution:</strong> Run rollback from the same directory where the scan was executed.</p>
+                </div>
+
+                <div class="troubleshoot-item">
+                    <h3>"Tests: 0 passed, 0 failed"</h3>
+                    <p><strong>Cause:</strong> No tests detected in project.</p>
+                    <p><strong>Solution:</strong> Add tests using Jest, Mocha, Vitest (JS) or pytest (Python).</p>
+                </div>
+
+                <div class="troubleshoot-item">
+                    <h3>ESLint not finding issues</h3>
+                    <p><strong>Cause:</strong> ESLint not installed in project.</p>
+                    <p><strong>Solution:</strong></p>
+                    <pre><code>npm install --save-dev eslint
+npx eslint --init</code></pre>
+                </div>
+            </section>
+
+            <!-- Links -->
+            <section class="content-section" id="links">
+                <h2>Links</h2>
                 <ul>
-                    <li><code>0</code> - No issues found</li>
-                    <li><code>1</code> - Issues found (warnings or errors)</li>
-                    <li><code>2</code> - Critical errors that need immediate attention</li>
+                    <li><strong>GitHub:</strong> <a href="https://github.com/your-org/prooffix" target="_blank"
+                            style="color: var(--accent);">https://github.com/your-org/prooffix</a></li>
+                    <li><strong>npm:</strong> <a href="https://npmjs.com/package/prooffix" target="_blank"
+                            style="color: var(--accent);">https://npmjs.com/package/prooffix</a></li>
+                    <li><strong>Feedback:</strong> <a href="feedback.html"
+                            style="color: var(--accent);">https://prooffix.dev/feedback</a></li>
+                    <li><strong>Issues:</strong> <a href="https://github.com/your-org/prooffix/issues" target="_blank"
+                            style="color: var(--accent);">https://github.com/your-org/prooffix/issues</a></li>
                 </ul>
             </section>
 
-            <!-- FAQ -->
-            <section class="content-section" id="faq">
-                <h2>Frequently Asked Questions</h2>
-
-                <h3>Does ProofFix send my code to the cloud?</h3>
-                <p>No. ProofFix is 100% local-first. Your code never leaves your machine. There's no telemetry, no cloud
-                    processing, no data collection.</p>
-
-                <h3>What languages are supported?</h3>
-                <p>Currently: TypeScript, JavaScript, Python, Go, Rust, and Java. More languages are being added
-                    regularly.</p>
-
-                <h3>Can I undo changes made by auto-fix?</h3>
-                <p>Yes! ProofFix creates a Git snapshot before making any changes. Run <code>prooffix rollback</code> to
-                    undo.</p>
-
-                <h3>Is ProofFix free?</h3>
-                <p>Yes. ProofFix is open source under the MIT license.</p>
-
-                <h3>How is this different from other linters?</h3>
-                <p>ProofFix goes beyond linting. It verifies proposed changes, creates rollback points, and ensures
-                    every fix is safe before applying.</p>
-            </section>
-
-            <!-- Support -->
+            <!-- License -->
             <section class="content-section">
-                <h2>Need Help?</h2>
-                <p>We're here to help you succeed with ProofFix.</p>
-                <ul>
-                    <li><a href="https://github.com/prooffix/prooffix/issues" target="_blank"
-                            style="color: var(--accent);">Report a bug on GitHub</a></li>
-                    <li><a href="https://github.com/prooffix/prooffix/discussions" target="_blank"
-                            style="color: var(--accent);">Join the community discussions</a></li>
-                    <li><a href="feedback.html" style="color: var(--accent);">Send us feedback directly</a></li>
-                </ul>
+                <h2>License</h2>
+                <p>MIT License</p>
+                <p style="margin-top: 2rem; color: var(--text-secondary);"><em>Made with 🖤 for developers who value
+                        safe, verifiable code evolution.</em></p>
             </section>
 
         </div>
@@ -238,6 +787,7 @@ jobs:
                     <p class="footer-tagline">Safe code evolution for developers who ship fast but don't break things.
                     </p>
                 </div>
+
                 <div class="footer-column">
                     <h4 class="footer-heading">Product</h4>
                     <ul class="footer-links">
@@ -250,9 +800,9 @@ jobs:
                 <div class="footer-column">
                     <h4 class="footer-heading">Resources</h4>
                     <ul class="footer-links">
-                        <li><a href="#quickstart">Getting Started</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                        <li><a href="https://github.com/prooffix/prooffix" target="_blank">GitHub</a></li>
+                        <li><a href="#installation">Getting Started</a></li>
+                        <li><a href="#troubleshooting">Troubleshooting</a></li>
+                        <li><a href="https://github.com/your-org/prooffix" target="_blank">GitHub</a></li>
                     </ul>
                 </div>
 
