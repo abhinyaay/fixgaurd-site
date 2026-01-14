@@ -184,6 +184,18 @@ h4 {
   object-fit: contain;
 }
 
+.logo-icon {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
 /* Feature Icons */
 .feature-icon {
   font-size: 2.5rem;
