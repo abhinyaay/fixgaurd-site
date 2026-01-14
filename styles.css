@@ -178,23 +178,18 @@ h4 {
   z-index: 10;
 }
 
-.logo-icon {
-  font-size: 1.75rem;
-  line-height: 1;
-}
-
-.logo-text {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: -0.03em;
+.logo-image {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }
 
 /* Feature Icons */
-.feature-icon {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  display: inline-block;
+.feature-icon-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .logo-icon {
