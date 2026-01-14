@@ -1,10 +1,10 @@
 // ===== Terminal Typing Animation =====
 const commands = [
-  { cmd: 'prooffix scan .', output: '✓ Scanning 127 files...\n✓ Found 3 issues (2 auto-fixable)' },
-  { cmd: 'prooffix scan . --auto-fix', output: '✓ Applied 2 verified patches\n✓ 1 issue requires manual review' },
-  { cmd: 'prooffix heal .', output: '⚡ AI-powered fix loop started...\n✓ Generated 3 test cases\n✓ All tests passing' },
-  { cmd: 'prooffix report . --format=sarif', output: '✓ SARIF report generated\n→ .prooffix/reports/sarif.json' },
-  { cmd: 'prooffix rollback abc123', output: '✓ Snapshot restored\n✓ 2 files reverted to previous state' }
+  { cmd: 'fixguard scan .', output: '✓ Scanning 127 files...\n✓ Found 3 issues (2 auto-fixable)' },
+  { cmd: 'fixguard scan . --auto-fix', output: '✓ Applied 2 verified patches\n✓ 1 issue requires manual review' },
+  { cmd: 'fixguard heal .', output: '⚡ AI-powered fix loop started...\n✓ Generated 3 test cases\n✓ All tests passing' },
+  { cmd: 'fixguard report . --format=sarif', output: '✓ SARIF report generated\n→ .fixguard/reports/sarif.json' },
+  { cmd: 'fixguard rollback abc123', output: '✓ Snapshot restored\n✓ 2 files reverted to previous state' }
 ];
 
 let commandIndex = 0;
@@ -264,9 +264,9 @@ if (form) {
       }
     } catch (error) {
       // Fallback: Store locally
-      const submissions = JSON.parse(localStorage.getItem('prooffix-feedback') || '[]');
+      const submissions = JSON.parse(localStorage.getItem('fixguard-feedback') || '[]');
       submissions.push(formData);
-      localStorage.setItem('prooffix-feedback', JSON.stringify(submissions));
+      localStorage.setItem('fixguard-feedback', JSON.stringify(submissions));
       console.log('Feedback stored locally:', formData);
     }
 

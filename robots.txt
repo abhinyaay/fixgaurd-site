@@ -1,9 +1,9 @@
-# robots.txt for ProofFix
+# robots.txt for FixGuard
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://prooffix.dev/sitemap.xml
+Sitemap: https://fixguard.dev/sitemap.xml
 
 # Crawl-delay (optional, be polite to crawlers)
 Crawl-delay: 1

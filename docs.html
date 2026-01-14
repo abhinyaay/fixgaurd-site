@@ -6,34 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Primary Meta Tags -->
-    <title>Documentation - ProofFix | Installation, Commands, API Reference</title>
-    <meta name="title" content="Documentation - ProofFix | Installation, Commands, API Reference">
+    <title>Documentation - FixGuard | Installation, Commands, API Reference</title>
+    <meta name="title" content="Documentation - FixGuard | Installation, Commands, API Reference">
     <meta name="description"
-        content="Complete ProofFix documentation. Learn how to install, configure, and use ProofFix for safe code evolution. Commands: scan, heal, report, rollback.">
+        content="Complete FixGuard documentation. Learn how to install, configure, and use FixGuard for safe code evolution. Commands: scan, heal, report, rollback.">
     <meta name="keywords"
-        content="ProofFix documentation, CLI commands, installation guide, code analysis tutorial, developer documentation">
-    <meta name="author" content="ProofFix">
+        content="FixGuard documentation, CLI commands, installation guide, code analysis tutorial, developer documentation">
+    <meta name="author" content="FixGuard">
     <meta name="robots" content="index, follow">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://prooffix.dev/docs.html">
+    <link rel="canonical" href="https://fixguard.dev/docs.html">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://prooffix.dev/docs.html">
-    <meta property="og:title" content="Documentation - ProofFix">
+    <meta property="og:url" content="https://fixguard.dev/docs.html">
+    <meta property="og:title" content="Documentation - FixGuard">
     <meta property="og:description"
-        content="Complete ProofFix documentation. Learn how to install and use ProofFix for safe code evolution.">
-    <meta property="og:image" content="https://prooffix.dev/assets/og-image.png">
-    <meta property="og:site_name" content="ProofFix">
+        content="Complete FixGuard documentation. Learn how to install and use FixGuard for safe code evolution.">
+    <meta property="og:image" content="https://fixguard.dev/assets/og-image.png">
+    <meta property="og:site_name" content="FixGuard">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://prooffix.dev/docs.html">
-    <meta name="twitter:title" content="Documentation - ProofFix">
+    <meta name="twitter:url" content="https://fixguard.dev/docs.html">
+    <meta name="twitter:title" content="Documentation - FixGuard">
     <meta name="twitter:description"
-        content="Complete ProofFix documentation. Learn how to install and use ProofFix for safe code evolution.">
-    <meta name="twitter:image" content="https://prooffix.dev/assets/og-image.png">
+        content="Complete FixGuard documentation. Learn how to install and use FixGuard for safe code evolution.">
+    <meta name="twitter:image" content="https://fixguard.dev/assets/og-image.png">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/symbol.png">
@@ -61,7 +61,7 @@
     <header class="header">
         <div class="container header-inner">
             <a href="/" class="logo">
-                <img src="assets/logo.png" alt="ProofFix Logo" class="logo-image">
+                <img src="assets/logo.png" alt="FixGuard Logo" class="logo-image">
             </a>
 
             <nav class="nav" id="nav">
@@ -83,7 +83,7 @@
     <section class="page-header">
         <div class="container">
             <p class="section-label">// documentation</p>
-            <h1 class="section-title">ProofFix <span class="text-orange">Documentation</span></h1>
+            <h1 class="section-title">FixGuard <span class="text-orange">Documentation</span></h1>
             <p class="section-desc">Safe Code Evolution. Zero Guesswork.</p>
         </div>
     </section>
@@ -234,12 +234,12 @@
                 <h2>Installation</h2>
 
                 <h3>From npm (Recommended)</h3>
-                <pre><code>npm install -g prooffix</code></pre>
+                <pre><code>npm install -g fixguard</code></pre>
 
                 <h3>From Source</h3>
                 <pre><code># Clone the repository
-git clone https://github.com/your-org/prooffix.git
-cd prooffix
+git clone https://github.com/your-org/fixguard.git
+cd fixguard
 
 # Install dependencies
 npm install
@@ -251,12 +251,12 @@ npm run build
 npm link
 
 # Verify installation
-prooffix --version</code></pre>
+fixguard --version</code></pre>
 
                 <h3>Verify Installation</h3>
-                <pre><code>prooffix --help</code></pre>
+                <pre><code>fixguard --help</code></pre>
                 <p>Expected output:</p>
-                <pre><code>Usage: prooffix [options] [command]
+                <pre><code>Usage: fixguard [options] [command]
 
 A verifiable, local-first system for safe code evolution
 
@@ -272,21 +272,21 @@ Commands:
             <section class="content-section" id="commands">
                 <h2>Commands</h2>
 
-                <!-- prooffix scan -->
+                <!-- fixguard scan -->
                 <div class="command-block">
-                    <h3><code>prooffix scan</code></h3>
+                    <h3><code>fixguard scan</code></h3>
                     <p>Analyze code for issues with optional auto-fixing.</p>
                     <pre><code># Read-only analysis (default)
-prooffix scan .
+fixguard scan .
 
 # Auto-fix low-risk issues
-prooffix scan . --auto-fix
+fixguard scan . --auto-fix
 
 # Guided refactor (propose all changes)
-prooffix scan . --mode=guided-refactor
+fixguard scan . --mode=guided-refactor
 
 # CI mode (strict, exits 1 on errors)
-prooffix scan . --ci</code></pre>
+fixguard scan . --ci</code></pre>
 
                     <h4>Options</h4>
                     <div class="table-wrapper">
@@ -374,24 +374,24 @@ prooffix scan . --ci</code></pre>
                     </div>
                 </div>
 
-                <!-- prooffix heal -->
+                <!-- fixguard heal -->
                 <div class="command-block">
-                    <h3><code>prooffix heal</code></h3>
+                    <h3><code>fixguard heal</code></h3>
                     <p>AI-powered test generation and fix loop.</p>
                     <pre><code># Use Ollama (local, free - default)
-prooffix heal .
+fixguard heal .
 
 # Use OpenAI
-prooffix heal . --ai-provider=openai
+fixguard heal . --ai-provider=openai
 
 # Use Groq (free cloud)
-prooffix heal . --ai-provider=groq
+fixguard heal . --ai-provider=groq
 
 # Limit iterations
-prooffix heal . --max-iterations=3
+fixguard heal . --max-iterations=3
 
 # Dry run (preview only)
-prooffix heal . --dry-run</code></pre>
+fixguard heal . --dry-run</code></pre>
 
                     <h4>Options</h4>
                     <div class="table-wrapper">
@@ -438,21 +438,21 @@ prooffix heal . --dry-run</code></pre>
 7. Show summary</code></pre>
                 </div>
 
-                <!-- prooffix report -->
+                <!-- fixguard report -->
                 <div class="command-block">
-                    <h3><code>prooffix report</code></h3>
+                    <h3><code>fixguard report</code></h3>
                     <p>Generate analysis reports.</p>
                     <pre><code># Markdown report (default)
-prooffix report .
+fixguard report .
 
 # JSON report
-prooffix report . --format=json
+fixguard report . --format=json
 
 # SARIF report (for GitHub/GitLab)
-prooffix report . --format=sarif
+fixguard report . --format=sarif
 
 # Custom output path
-prooffix report . --output=./reports/scan.md</code></pre>
+fixguard report . --output=./reports/scan.md</code></pre>
 
                     <h4>Options</h4>
                     <div class="table-wrapper">
@@ -485,15 +485,15 @@ prooffix report . --output=./reports/scan.md</code></pre>
                     </div>
                 </div>
 
-                <!-- prooffix rollback -->
+                <!-- fixguard rollback -->
                 <div class="command-block">
-                    <h3><code>prooffix rollback</code></h3>
+                    <h3><code>fixguard rollback</code></h3>
                     <p>Revert changes from a specific run.</p>
                     <pre><code># Rollback by run ID
-prooffix rollback abc123
+fixguard rollback abc123
 
 # Preview what would be restored
-prooffix rollback abc123 --dry-run</code></pre>
+fixguard rollback abc123 --dry-run</code></pre>
                     <p>Run IDs are shown after each scan/heal operation.</p>
                 </div>
             </section>
@@ -606,8 +606,8 @@ ollama serve
 # Step 3: Pull a model (one-time, ~4GB download)
 ollama pull codellama
 
-# Step 4: Use ProofFix
-prooffix heal .</code></pre>
+# Step 4: Use FixGuard
+fixguard heal .</code></pre>
                     <p><strong>Pros:</strong> Free, private, no API key needed<br>
                         <strong>Cons:</strong> Requires ~4GB disk space, local compute
                     </p>
@@ -620,8 +620,8 @@ prooffix heal .</code></pre>
 # Step 2: Set environment variable
 export GROQ_API_KEY=gsk-your-key-here
 
-# Step 3: Use ProofFix with Groq
-prooffix heal . --ai-provider=groq</code></pre>
+# Step 3: Use FixGuard with Groq
+fixguard heal . --ai-provider=groq</code></pre>
                     <p><strong>Pros:</strong> Free tier, very fast inference<br>
                         <strong>Cons:</strong> Requires internet, API key
                     </p>
@@ -634,8 +634,8 @@ prooffix heal . --ai-provider=groq</code></pre>
 # Step 2: Set environment variable
 export OPENAI_API_KEY=sk-your-key-here
 
-# Step 3: Use ProofFix with OpenAI
-prooffix heal . --ai-provider=openai --model=gpt-4</code></pre>
+# Step 3: Use FixGuard with OpenAI
+fixguard heal . --ai-provider=openai --model=gpt-4</code></pre>
                     <p><strong>Pros:</strong> High quality, GPT-4<br>
                         <strong>Cons:</strong> Paid, requires API key
                     </p>
@@ -648,8 +648,8 @@ prooffix heal . --ai-provider=openai --model=gpt-4</code></pre>
 # Step 2: Set environment variable
 export ANTHROPIC_API_KEY=sk-ant-your-key-here
 
-# Step 3: Use ProofFix with Anthropic
-prooffix heal . --ai-provider=anthropic</code></pre>
+# Step 3: Use FixGuard with Anthropic
+fixguard heal . --ai-provider=anthropic</code></pre>
                 </div>
             </section>
 
@@ -688,9 +688,9 @@ prooffix heal . --ai-provider=anthropic</code></pre>
                 </div>
 
                 <h3>Project Structure</h3>
-                <p>After running ProofFix, your project will have:</p>
+                <p>After running FixGuard, your project will have:</p>
                 <pre><code>your-project/
-├── .prooffix/
+├── .fixguard/
 │   ├── logs/           # Run logs (JSON)
 │   ├── snapshots/      # Git snapshots
 │   └── reports/        # Generated reports</code></pre>
@@ -701,30 +701,30 @@ prooffix heal . --ai-provider=anthropic</code></pre>
                 <h2>CI/CD Integration</h2>
 
                 <h3>GitHub Actions</h3>
-                <pre><code>name: ProofFix Scan
+                <pre><code>name: FixGuard Scan
 
 on: [push, pull_request]
 
 jobs:
-  prooffix:
+  fixguard:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: npm install -g prooffix
-      - run: prooffix scan . --ci</code></pre>
+      - run: npm install -g fixguard
+      - run: fixguard scan . --ci</code></pre>
 
                 <h3>GitLab CI</h3>
-                <pre><code>prooffix:
+                <pre><code>fixguard:
   image: node:20
   script:
-    - npm install -g prooffix
-    - prooffix scan . --ci
+    - npm install -g fixguard
+    - fixguard scan . --ci
   artifacts:
     reports:
-      sast: .prooffix/reports/sarif.json</code></pre>
+      sast: .fixguard/reports/sarif.json</code></pre>
 
                 <h3>Exit Codes</h3>
                 <div class="table-wrapper">
@@ -790,14 +790,14 @@ npx eslint --init</code></pre>
             <section class="content-section" id="links">
                 <h2>Links</h2>
                 <ul>
-                    <li><strong>GitHub:</strong> <a href="https://github.com/your-org/prooffix" target="_blank"
-                            style="color: var(--accent);">https://github.com/your-org/prooffix</a></li>
-                    <li><strong>npm:</strong> <a href="https://npmjs.com/package/prooffix" target="_blank"
-                            style="color: var(--accent);">https://npmjs.com/package/prooffix</a></li>
+                    <li><strong>GitHub:</strong> <a href="https://github.com/your-org/fixguard" target="_blank"
+                            style="color: var(--accent);">https://github.com/your-org/fixguard</a></li>
+                    <li><strong>npm:</strong> <a href="https://npmjs.com/package/fixguard" target="_blank"
+                            style="color: var(--accent);">https://npmjs.com/package/fixguard</a></li>
                     <li><strong>Feedback:</strong> <a href="feedback.html"
-                            style="color: var(--accent);">https://prooffix.dev/feedback</a></li>
-                    <li><strong>Issues:</strong> <a href="https://github.com/your-org/prooffix/issues" target="_blank"
-                            style="color: var(--accent);">https://github.com/your-org/prooffix/issues</a></li>
+                            style="color: var(--accent);">https://fixguard.dev/feedback</a></li>
+                    <li><strong>Issues:</strong> <a href="https://github.com/your-org/fixguard/issues" target="_blank"
+                            style="color: var(--accent);">https://github.com/your-org/fixguard/issues</a></li>
                 </ul>
             </section>
 
@@ -818,7 +818,7 @@ npx eslint --init</code></pre>
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="/" class="logo">
-                        <img src="assets/logo.png" alt="ProofFix Logo" class="logo-image">
+                        <img src="assets/logo.png" alt="FixGuard Logo" class="logo-image">
                     </a>
                     <p class="footer-tagline">Safe code evolution for developers who ship fast but don't break things.
                     </p>
@@ -838,7 +838,7 @@ npx eslint --init</code></pre>
                     <ul class="footer-links">
                         <li><a href="#installation">Getting Started</a></li>
                         <li><a href="#troubleshooting">Troubleshooting</a></li>
-                        <li><a href="https://github.com/your-org/prooffix" target="_blank">GitHub</a></li>
+                        <li><a href="https://github.com/your-org/fixguard" target="_blank">GitHub</a></li>
                     </ul>
                 </div>
 
@@ -853,7 +853,7 @@ npx eslint --init</code></pre>
 
             <div class="footer-bottom">
                 <p>Made with <span class="heart">🧡</span> for developers who care about code quality</p>
-                <p class="footer-copyright">© 2026 ProofFix. Open source under MIT license.</p>
+                <p class="footer-copyright">© 2026 FixGuard. Open source under MIT license.</p>
             </div>
         </div>
     </footer>
