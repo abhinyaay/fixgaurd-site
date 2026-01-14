@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://fixguard.dev/sitemap.xml
+Sitemap: https://fixgaurd.site/sitemap.xml
 
 # Crawl-delay (optional, be polite to crawlers)
 Crawl-delay: 1
