@@ -1144,6 +1144,18 @@ h4 {
   color: var(--accent);
 }
 
+/* Styled Checkmark (replaces emoji) */
+.check {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.check-muted {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
 /* Command Blocks */
 .command-block {
   margin: 2.5rem 0;
