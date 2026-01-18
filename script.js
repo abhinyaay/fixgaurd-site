@@ -249,58 +249,59 @@ if (form) {
       timestamp: new Date().toISOString()
     };
 
-    // Submit to Formspree
-    const response = await fetch('https://formspree.io/f/xeeearba', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    });
+    try {
+      // Submit to Formspree
+      const response = await fetch('https://formspree.io/f/xeeearba', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
 
-    if (!response.ok) {
-      throw new Error('Formspree submission failed');
+      if (!response.ok) {
+        throw new Error('Formspree submission failed');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+
+      // Fallback: Open email client
+      const subject = encodeURIComponent(`Feedback: ${formData.category} - ${formData.name}`);
+      const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nCategory: ${formData.category}\n\n${formData.message}`);
+      window.location.href = `mailto:hello@fixgaurd.online?subject=${subject}&body=${body}`;
+
+      // Also store locally for backup
+      const submissions = JSON.parse(localStorage.getItem('fixguard-feedback') || '[]');
+      submissions.push(formData);
+      localStorage.setItem('fixguard-feedback', JSON.stringify(submissions));
     }
-  } catch (error) {
-    console.error('Submission error:', error);
 
-    // Fallback: Open email client
-    const subject = encodeURIComponent(`Feedback: ${formData.category} - ${formData.name}`);
-    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nCategory: ${formData.category}\n\n${formData.message}`);
-    window.location.href = `mailto:hello@fixgaurd.online?subject=${subject}&body=${body}`;
+    // Simulate network delay for demo
+    await new Promise(resolve => setTimeout(resolve, 800));
 
-    // Also store locally for backup
-    const submissions = JSON.parse(localStorage.getItem('fixguard-feedback') || '[]');
-    submissions.push(formData);
-    localStorage.setItem('fixguard-feedback', JSON.stringify(submissions));
-  }
-
-  // Simulate network delay for demo
-  await new Promise(resolve => setTimeout(resolve, 800));
-
-  // Show success
-  if (submitBtn) {
-    submitBtn.classList.remove('loading');
-    submitBtn.style.display = 'none';
-  }
-  if (successMessage) {
-    successMessage.classList.add('visible');
-  }
-
-  // Reset form
-  form.reset();
-
-  // Reset success message after 5 seconds
-  setTimeout(() => {
-    if (successMessage) {
-      successMessage.classList.remove('visible');
-    }
+    // Show success
     if (submitBtn) {
-      submitBtn.style.display = '';
-      submitBtn.disabled = false;
+      submitBtn.classList.remove('loading');
+      submitBtn.style.display = 'none';
     }
-  }, 5000);
-});
+    if (successMessage) {
+      successMessage.classList.add('visible');
+    }
+
+    // Reset form
+    form.reset();
+
+    // Reset success message after 5 seconds
+    setTimeout(() => {
+      if (successMessage) {
+        successMessage.classList.remove('visible');
+      }
+      if (submitBtn) {
+        submitBtn.style.display = '';
+        submitBtn.disabled = false;
+      }
+    }, 5000);
+  });
 }
 
 // ===== Initialize =====
