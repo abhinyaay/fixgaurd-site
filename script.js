@@ -254,10 +254,13 @@ if (form) {
       const response = await fetch('https://formspree.io/f/xeeearba', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify(formData)
       });
+
+      console.log('Formspree response status:', response.status);
 
       if (!response.ok) {
         throw new Error('Formspree submission failed');
