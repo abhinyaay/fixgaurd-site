@@ -259,6 +259,9 @@ if (form) {
         },
         body: JSON.stringify({
           access_key: '223b0cda-c412-47fd-92a2-cd6f5dcd4864',
+          subject: 'New Feedback from FixGuard',
+          from_name: 'FixGuard',
+          replyto: formData.email,
           ...formData
         })
       });
