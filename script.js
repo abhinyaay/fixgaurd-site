@@ -251,23 +251,18 @@ if (form) {
 
     try {
       // Try Formspree first (replace with your endpoint)
-      const response = await fetch('https://formspree.io/f/your-form-id', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
-
-      if (!response.ok) {
-        throw new Error('Formspree not configured');
-      }
+      // Direct mailto (since no backend is configured yet)
+      throw new Error('Using mailto fallback');
     } catch (error) {
-      // Fallback: Store locally
+      // Fallback: Open email client
+      const subject = encodeURIComponent(`Feedback: ${formData.category} - ${formData.name}`);
+      const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nCategory: ${formData.category}\n\n${formData.message}`);
+      window.location.href = `mailto:hello@fixgaurd.online?subject=${subject}&body=${body}`;
+
+      // Also store locally for backup
       const submissions = JSON.parse(localStorage.getItem('fixguard-feedback') || '[]');
       submissions.push(formData);
       localStorage.setItem('fixguard-feedback', JSON.stringify(submissions));
-      console.log('Feedback stored locally:', formData);
     }
 
     // Simulate network delay for demo
