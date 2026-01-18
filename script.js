@@ -250,20 +250,24 @@ if (form) {
     };
 
     try {
-      // Submit to Formspree
-      const response = await fetch('https://formspree.io/f/xeeearba', {
+      // Submit to Web3Forms
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          access_key: '223b0cda-c412-47fd-92a2-cd6f5dcd4864',
+          ...formData
+        })
       });
 
-      console.log('Formspree response status:', response.status);
+      const result = await response.json();
+      console.log('Web3Forms response:', result);
 
-      if (!response.ok) {
-        throw new Error('Formspree submission failed');
+      if (!result.success) {
+        throw new Error(result.message || 'Web3Forms submission failed');
       }
     } catch (error) {
       console.error('Submission error:', error);
